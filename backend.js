@@ -93,6 +93,7 @@ app.get('/Animek', (req, res) => {
     
     connection.connect()
     var feltetel2='anime_cim LIKE "%'+req.body.bevitel4+'%"';
+
     connection.query('SELECT anime_cim,anime_leiras,anime_kep FROM anime WHERE '+feltetel2, function (err, rows, fields) {
       if (err) throw err
     
@@ -117,7 +118,7 @@ app.get('/Animek', (req, res) => {
     
     connection.connect()
     var feltetel3='anime_tipus LIKE "%'+req.body.bevitel3+'%"';
-    connection.query('SELECT anime_tipus from anime WHERE'+feltetel3, function (err, rows, fields) {
+    connection.query('SELECT * from anime WHERE '+feltetel3, function (err, rows, fields) {
       if (err) throw err
     
       console.log(rows)
