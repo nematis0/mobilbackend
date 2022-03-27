@@ -33,6 +33,7 @@ app.get('/Animek', (req, res) => {
 
   })
 
+  /*
   app.post('/animekomment', (req, res) => {
     var mysql = require('mysql')
     var connection = mysql.createConnection({
@@ -54,10 +55,10 @@ app.get('/Animek', (req, res) => {
     
     connection.end()    
 
-  })
+  }) 
 
 
-  app.post('/kommentfelvitel', (req, res) => {
+  /*app.post('/kommentfelvitel', (req, res) => {
     var mysql = require('mysql')
     var connection = mysql.createConnection({
       host: 'localhost',
@@ -80,7 +81,7 @@ app.get('/Animek', (req, res) => {
     
     connection.end()    
 
-  })  
+  })  */
 
   app.post('/kereses', (req, res) => {
     var mysql = require('mysql')
