@@ -33,8 +33,7 @@ app.get('/Animek', (req, res) => {
 
   })
 
-  /*
-  app.post('/animekomment', (req, res) => {
+  app.get('/forumuzik', (req, res) => {
     var mysql = require('mysql')
     var connection = mysql.createConnection({
       host: 'localhost',
@@ -45,43 +44,17 @@ app.get('/Animek', (req, res) => {
     
     connection.connect()
     
-    connection.query('SELECT * from uzenet where uzenet_tipus_id=' + req.body.bevitel1, function (err, rows, fields) {
+    connection.query('SELECT * from forumuzenet ORDER BY forum_id DESC ', function (err, rows, fields) {
       if (err) throw err
     
       console.log(rows)
-
+  
       res.send(rows)
     })
     
     connection.end()    
-
-  }) 
-
-
-  /*app.post('/kommentfelvitel', (req, res) => {
-    var mysql = require('mysql')
-    var connection = mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'zarodolgozat'
-    })
-    
-    connection.connect()
-    
-    let dt=new Date();
-    let teljesdat=dt.getFullYear()+"-"+  (dt.getMonth()+1)   +"-"+dt.getDate();
-    connection.query("INSERT INTO uzenet VALUES (NULL, '"+req.body.bevitel1+"', '"+req.body.bevitel2+"', '"+teljesdat+"', "+req.body.bevitel3+") ", function (err, rows, fields) {
-      if (err) throw err
-    
-      console.log("Sikeres felvitel!")
-
-      res.send("Sikeres felvitel!")
-    })
-    
-    connection.end()    
-
-  })  */
+  
+  })
 
   app.post('/kereses', (req, res) => {
     var mysql = require('mysql')
